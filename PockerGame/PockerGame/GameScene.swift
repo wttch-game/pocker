@@ -34,6 +34,10 @@ class GameScene: SKScene {
                                               SKAction.fadeOut(withDuration: 0.5),
                                               SKAction.removeFromParent()]))
         }
+        
+        DispatchQueue.global(qos: .background).async {
+            PockerSocketClient().connect()
+        }
     }
     
     

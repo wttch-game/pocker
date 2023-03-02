@@ -20,8 +20,22 @@ public struct SocketMessage {
     }
 }
 
+public class SocketMessageEncoder : MessageToByteEncoder {
+    public typealias OutboundIn = SocketMessage
+    
+    public init() {}
+    
+    public func encode(data: SocketMessage, out: inout ByteBuffer) throws {
+        var msgData = CodecUtil.encodeMessage(data)!
+        out.writeInteger(msgData.readableBytes)
+        out.writeBuffer(&msgData)
+    }
+}
+
 public class SocketMessageDecoder : ByteToMessageDecoder {
     public typealias InboundOut = SocketMessage
+    
+    public init() {}
     
     public func decode(context: ChannelHandlerContext, buffer: inout ByteBuffer) throws -> DecodingState {
         guard buffer.readableBytes >= 4 else { return .continue }
@@ -30,8 +44,7 @@ public class SocketMessageDecoder : ByteToMessageDecoder {
         if buffer.readableBytes < length {
             return .needMoreData
         }
-        let data = Data(buffer.readBytes(length: length)!)
-        context.fireChannelRead(self.wrapInboundOut(SocketMessage(opCode: 1, subCode: 1, value: data)))
+        context.fireChannelRead(self.wrapInboundOut(CodecUtil.decodeMessage(&buffer)))
         return .continue
     }
 }

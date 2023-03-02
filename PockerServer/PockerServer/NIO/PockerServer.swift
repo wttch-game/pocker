@@ -10,29 +10,18 @@ import NIOCore
 import NIOPosix
 import PockerCommon
 
-final class PockerMessageCodec : ByteToMessageDecoder {
-    public typealias InboundIn = ByteBuffer
-    public typealias InboundOut = ByteBuffer
-    
-    func decode(context: ChannelHandlerContext, buffer: inout ByteBuffer) throws -> DecodingState {
-        let readable = buffer.withUnsafeReadableBytes { $0.firstIndex(of: "\n".utf8.first!) }
-        if let r = readable {
-            context.fireChannelRead(self.wrapInboundOut(buffer.readSlice(length: r + 1)!))
-            return .continue
-        }
-        return .needMoreData
-    }
-}
-
 
 final class PockerHandler : ChannelInboundHandler {
-    public typealias InboundIn = ByteBuffer
-    public typealias OutboundOut = ByteBuffer
+    public typealias InboundIn = SocketMessage
+    public typealias OutboundOut = SocketMessage
     
     func channelActive(context: ChannelHandlerContext) {
         guard let address = context.remoteAddress else { return }
         NSLog("客户端已连接:\(address)")
-        // context.write(.init(1)).wait()
+        let socketMessage = SocketMessage(opCode: 1, subCode: 1, value: Data("你好，客户端:".utf8))
+        context.channel.writeAndFlush(self.wrapOutboundOut(socketMessage)).whenComplete { result in
+            NSLog("发送成功.")
+        }
     }
     
     func channelInactive(context: ChannelHandlerContext) {
@@ -42,7 +31,7 @@ final class PockerHandler : ChannelInboundHandler {
     }
     
     func channelRead(context: ChannelHandlerContext, data: NIOAny) {
-        
+        let msg = self.unwrapInboundIn(data)
     }
     
     func errorCaught(context: ChannelHandlerContext, error: Error) {
@@ -76,7 +65,10 @@ class PockerServer {
             // 允许套接字绑定到已在使用的地址
             .serverChannelOption(ChannelOptions.socketOption(.so_reuseaddr), value: 1)
             .childChannelInitializer({ channel in
-                channel.pipeline.addHandler(ByteToMessageHandler(PockerMessageCodec())).flatMap{ v in
+                channel.pipeline.addHandlers([
+                    ByteToMessageHandler(SocketMessageDecoder()),
+                    MessageToByteHandler(SocketMessageEncoder())
+                ]).flatMap{ v in
                     channel.pipeline.addHandler(handler)
                 }
             })

@@ -16,6 +16,7 @@
 		4946E6E629AFB4EE00B963D5 /* PockerServerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946E6E529AFB4EE00B963D5 /* PockerServerUITestsLaunchTests.swift */; };
 		4946E73529AFBA9F00B963D5 /* PockerServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946E73429AFBA9F00B963D5 /* PockerServer.swift */; };
 		4946E73829AFBAFB00B963D5 /* NIO in Frameworks */ = {isa = PBXBuildFile; productRef = 4946E73729AFBAFB00B963D5 /* NIO */; };
+		4985D92529B073C40042DD12 /* PockerCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 4985D92429B073C40042DD12 /* PockerCommon */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4946E73829AFBAFB00B963D5 /* NIO in Frameworks */,
+				4985D92529B073C40042DD12 /* PockerCommon in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,7 @@
 				4946E6D829AFB4EE00B963D5 /* PockerServerTests */,
 				4946E6E229AFB4EE00B963D5 /* PockerServerUITests */,
 				4946E6C529AFB4EC00B963D5 /* Products */,
+				4985D92329B073C40042DD12 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +145,13 @@
 			path = NIO;
 			sourceTree = "<group>";
 		};
+		4985D92329B073C40042DD12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,11 +166,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				4946E73A29AFBB4000B963D5 /* PBXTargetDependency */,
 			);
 			name = PockerServer;
 			packageProductDependencies = (
 				4946E73729AFBAFB00B963D5 /* NIO */,
+				4985D92429B073C40042DD12 /* PockerCommon */,
 			);
 			productName = PockerServer;
 			productReference = 4946E6C429AFB4EC00B963D5 /* PockerServer.app */;
@@ -314,10 +324,6 @@
 			isa = PBXTargetDependency;
 			target = 4946E6C329AFB4EC00B963D5 /* PockerServer */;
 			targetProxy = 4946E6E029AFB4EE00B963D5 /* PBXContainerItemProxy */;
-		};
-		4946E73A29AFBB4000B963D5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 4946E73929AFBB4000B963D5 /* PockerCommon */;
 		};
 /* End PBXTargetDependency section */
 
@@ -619,7 +625,7 @@
 			package = 4946E73629AFBAFB00B963D5 /* XCRemoteSwiftPackageReference "swift-nio" */;
 			productName = NIO;
 		};
-		4946E73929AFBB4000B963D5 /* PockerCommon */ = {
+		4985D92429B073C40042DD12 /* PockerCommon */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PockerCommon;
 		};
