@@ -14,6 +14,9 @@ class GameScene: SKScene {
     private var spinnyNode : SKShapeNode?
     
     override func didMove(to view: SKView) {
+        let startScene = SKScene(fileNamed: "StartScene")!
+        self.view?.presentScene(startScene)
+        startScene.size = CGSize(width: 1200, height: 800)
         
         // Get label node from scene and store it for use later
         self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode

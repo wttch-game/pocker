@@ -27,6 +27,7 @@ class ViewController: NSViewController {
             }
             
             view.ignoresSiblingOrder = true
+            view.setFrameSize(NSSize(width: 960, height: 640))
             
             view.showsFPS = true
             view.showsNodeCount = true
