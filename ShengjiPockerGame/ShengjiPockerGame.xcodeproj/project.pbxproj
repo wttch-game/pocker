@@ -15,6 +15,8 @@
 		49786BC929C0B4FF00F64B4C /* StartPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49786BC829C0B4FF00F64B4C /* StartPanel.xib */; };
 		49786BCA29C0B4FF00F64B4C /* StartPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49786BC829C0B4FF00F64B4C /* StartPanel.xib */; };
 		49B29AA029C0BD5B00FF25DE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B29A9F29C0BD5B00FF25DE /* MainView.swift */; };
+		49B29AA229C0C55000FF25DE /* PockerSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B29AA129C0C55000FF25DE /* PockerSocketClient.swift */; };
+		49B29AA329C0C55000FF25DE /* PockerSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B29AA129C0C55000FF25DE /* PockerSocketClient.swift */; };
 		49ED4F4B29BF58BA00E78210 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F4A29BF58BA00E78210 /* AppDelegate.swift */; };
 		49ED4F4D29BF58BA00E78210 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F4C29BF58BA00E78210 /* GameViewController.swift */; };
 		49ED4F5029BF58BA00E78210 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49ED4F4E29BF58BA00E78210 /* Main.storyboard */; };
@@ -42,6 +44,7 @@
 		49786BBA29C07BE900F64B4C /* StartPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPanel.swift; sourceTree = "<group>"; };
 		49786BC829C0B4FF00F64B4C /* StartPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartPanel.xib; sourceTree = "<group>"; };
 		49B29A9F29C0BD5B00FF25DE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		49B29AA129C0C55000FF25DE /* PockerSocketClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PockerSocketClient.swift; sourceTree = "<group>"; };
 		49ED4F3F29BF58B900E78210 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		49ED4F4029BF58B900E78210 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		49ED4F4129BF58B900E78210 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 		49ED4F3E29BF58B900E78210 /* ShengjiPockerGame Shared */ = {
 			isa = PBXGroup;
 			children = (
+				49B29AA129C0C55000FF25DE /* PockerSocketClient.swift */,
 				49ED4F7F29C03E6D00E78210 /* View */,
 				49ED4F7229BF5A4E00E78210 /* Scene */,
 				49ED4F3F29BF58B900E78210 /* Actions.sks */,
@@ -280,6 +284,7 @@
 				49786BB529C0425400F64B4C /* BaseXibPanelView.swift in Sources */,
 				49ED4F4D29BF58BA00E78210 /* GameViewController.swift in Sources */,
 				49ED4F4B29BF58BA00E78210 /* AppDelegate.swift in Sources */,
+				49B29AA229C0C55000FF25DE /* PockerSocketClient.swift in Sources */,
 				49ED4F7729BF5C5E00E78210 /* StartScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49ED4F6729BF58BA00E78210 /* GameScene.swift in Sources */,
+				49B29AA329C0C55000FF25DE /* PockerSocketClient.swift in Sources */,
 				49786BB629C0425400F64B4C /* BaseXibPanelView.swift in Sources */,
 				49ED4F5D29BF58BA00E78210 /* GameViewController.swift in Sources */,
 				49ED4F5B29BF58BA00E78210 /* AppDelegate.swift in Sources */,
