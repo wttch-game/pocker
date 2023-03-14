@@ -17,6 +17,10 @@
 		49B29AA029C0BD5B00FF25DE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B29A9F29C0BD5B00FF25DE /* MainView.swift */; };
 		49B29AA229C0C55000FF25DE /* PockerSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B29AA129C0C55000FF25DE /* PockerSocketClient.swift */; };
 		49B29AA329C0C55000FF25DE /* PockerSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B29AA129C0C55000FF25DE /* PockerSocketClient.swift */; };
+		49B29AA629C0C68300FF25DE /* NIO in Frameworks */ = {isa = PBXBuildFile; productRef = 49B29AA529C0C68300FF25DE /* NIO */; };
+		49B29AA929C0C6AB00FF25DE /* PockerCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 49B29AA829C0C6AB00FF25DE /* PockerCommon */; };
+		49B29AAB29C0C6B200FF25DE /* NIO in Frameworks */ = {isa = PBXBuildFile; productRef = 49B29AAA29C0C6B200FF25DE /* NIO */; };
+		49B29AAD29C0C6B500FF25DE /* PockerCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 49B29AAC29C0C6B500FF25DE /* PockerCommon */; };
 		49ED4F4B29BF58BA00E78210 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F4A29BF58BA00E78210 /* AppDelegate.swift */; };
 		49ED4F4D29BF58BA00E78210 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F4C29BF58BA00E78210 /* GameViewController.swift */; };
 		49ED4F5029BF58BA00E78210 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49ED4F4E29BF58BA00E78210 /* Main.storyboard */; };
@@ -45,6 +49,7 @@
 		49786BC829C0B4FF00F64B4C /* StartPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartPanel.xib; sourceTree = "<group>"; };
 		49B29A9F29C0BD5B00FF25DE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		49B29AA129C0C55000FF25DE /* PockerSocketClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PockerSocketClient.swift; sourceTree = "<group>"; };
+		49B29AAE29C0C83D00FF25DE /* ShengjiPockerGame macOSRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ShengjiPockerGame macOSRelease.entitlements"; sourceTree = "<group>"; };
 		49ED4F3F29BF58B900E78210 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		49ED4F4029BF58B900E78210 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		49ED4F4129BF58B900E78210 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -69,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B29AA629C0C68300FF25DE /* NIO in Frameworks */,
+				49B29AA929C0C6AB00FF25DE /* PockerCommon in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B29AAB29C0C6B200FF25DE /* NIO in Frameworks */,
+				49B29AAD29C0C6B500FF25DE /* PockerCommon in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +103,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		49B29AA729C0C6AB00FF25DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		49ED4F3929BF58B800E78210 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +117,7 @@
 				49ED4F4929BF58BA00E78210 /* ShengjiPockerGame iOS */,
 				49ED4F5929BF58BA00E78210 /* ShengjiPockerGame macOS */,
 				49ED4F4829BF58BA00E78210 /* Products */,
+				49B29AA729C0C6AB00FF25DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +157,7 @@
 		49ED4F5929BF58BA00E78210 /* ShengjiPockerGame macOS */ = {
 			isa = PBXGroup;
 			children = (
+				49B29AAE29C0C83D00FF25DE /* ShengjiPockerGame macOSRelease.entitlements */,
 				49ED4F5A29BF58BA00E78210 /* AppDelegate.swift */,
 				49ED4F5C29BF58BA00E78210 /* GameViewController.swift */,
 				49ED4F5E29BF58BA00E78210 /* Main.storyboard */,
@@ -183,6 +201,10 @@
 			dependencies = (
 			);
 			name = "ShengjiPockerGame iOS";
+			packageProductDependencies = (
+				49B29AA529C0C68300FF25DE /* NIO */,
+				49B29AA829C0C6AB00FF25DE /* PockerCommon */,
+			);
 			productName = "ShengjiPockerGame iOS";
 			productReference = 49ED4F4729BF58BA00E78210 /* ShengjiPockerGame.app */;
 			productType = "com.apple.product-type.application";
@@ -200,6 +222,10 @@
 			dependencies = (
 			);
 			name = "ShengjiPockerGame macOS";
+			packageProductDependencies = (
+				49B29AAA29C0C6B200FF25DE /* NIO */,
+				49B29AAC29C0C6B500FF25DE /* PockerCommon */,
+			);
 			productName = "ShengjiPockerGame macOS";
 			productReference = 49ED4F5829BF58BA00E78210 /* ShengjiPockerGame.app */;
 			productType = "com.apple.product-type.application";
@@ -231,6 +257,9 @@
 				Base,
 			);
 			mainGroup = 49ED4F3929BF58B800E78210;
+			packageReferences = (
+				49B29AA429C0C68300FF25DE /* XCRemoteSwiftPackageReference "swift-nio" */,
+			);
 			productRefGroup = 49ED4F4829BF58BA00E78210 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -538,7 +567,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "ShengjiPockerGame macOS/ShengjiPockerGame_macOS.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "ShengjiPockerGame macOS/ShengjiPockerGame macOSRelease.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -593,6 +622,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		49B29AA429C0C68300FF25DE /* XCRemoteSwiftPackageReference "swift-nio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-nio.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		49B29AA529C0C68300FF25DE /* NIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49B29AA429C0C68300FF25DE /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIO;
+		};
+		49B29AA829C0C6AB00FF25DE /* PockerCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PockerCommon;
+		};
+		49B29AAA29C0C6B200FF25DE /* NIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49B29AA429C0C68300FF25DE /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIO;
+		};
+		49B29AAC29C0C6B500FF25DE /* PockerCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PockerCommon;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 49ED4F3A29BF58B800E78210 /* Project object */;
 }

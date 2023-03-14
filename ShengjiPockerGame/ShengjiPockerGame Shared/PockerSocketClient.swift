@@ -9,6 +9,7 @@ import Foundation
 import NIOCore
 import NIOPosix
 import PockerCommon
+import CocoaLumberjackSwift
 
 class PockerClientHandler : ChannelInboundHandler {
     public typealias InboundIn = SocketMessage
@@ -36,6 +37,7 @@ class PockerSocketClient {
     let group : MultiThreadedEventLoopGroup
     let bootstrap : ClientBootstrap
     let handler : PockerClientHandler
+    var channel : Channel?
     
     init() {
         group = MultiThreadedEventLoopGroup(numberOfThreads: 1)
@@ -43,7 +45,10 @@ class PockerSocketClient {
         bootstrap = ClientBootstrap(group: group)
             .channelOption(ChannelOptions.socketOption(.so_reuseaddr), value: 1)
             .channelInitializer({ channel in
-                channel.pipeline.addHandler(ByteToMessageHandler(SocketMessageDecoder())).flatMap{ v in
+                channel.pipeline.addHandlers([
+                    ByteToMessageHandler(SocketMessageDecoder()),
+                    MessageToByteHandler(SocketMessageEncoder())
+                ]).flatMap{ v in
                     channel.pipeline.addHandler(handler)
                 }
             })
@@ -54,9 +59,14 @@ class PockerSocketClient {
         let host = "0.0.0.0"
         let port = 18896
         do {
-            try bootstrap.connect(host: host, port: port).wait()
+            channel = try bootstrap.connect(host: host, port: port).wait()
         } catch {
             NSLog("\(error)")
         }
+    }
+    
+    func sendMessage(_ msg : SocketMessage) {
+        NSLog("客户端发送消息:\(msg)")
+        channel?.writeAndFlush(msg)
     }
 }

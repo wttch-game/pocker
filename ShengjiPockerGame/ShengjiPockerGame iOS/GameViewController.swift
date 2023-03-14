@@ -10,8 +10,7 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-    
-    private var startPanel: StartPanel?
+    private var client : PockerSocketClient?
     
     private var skView : SKView {
         get {
@@ -32,8 +31,14 @@ class GameViewController: UIViewController {
         skView.showsFPS = true
         skView.showsNodeCount = true
 
-        let mainView = MainView(frame: skView.frame)
-        skView.addSubview(mainView)
+        DispatchQueue.global(qos: .background).async {
+            self.client = PockerSocketClient()
+            self.client?.connect()
+            DispatchQueue.main.async {
+                let mainView = MainView(frame: skView.frame, client: self.client!)
+                skView.addSubview(mainView)
+            }
+        }
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

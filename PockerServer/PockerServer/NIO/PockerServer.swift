@@ -32,7 +32,8 @@ final class PockerHandler : ChannelInboundHandler {
     }
     
     func channelRead(context: ChannelHandlerContext, data: NIOAny) {
-        let msg = self.unwrapInboundIn(data)
+        let msg : SocketMessage = self.unwrapInboundIn(data)
+        DDLogInfo("已读取\(msg)")
     }
     
     func errorCaught(context: ChannelHandlerContext, error: Error) {
