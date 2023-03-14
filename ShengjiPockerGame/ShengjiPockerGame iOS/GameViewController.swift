@@ -10,19 +10,30 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    
+    private var startPanel: StartPanel?
+    
+    private var skView : SKView {
+        get {
+            return self.view as! SKView
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let scene = GameScene.newGameScene()
+        let scene = StartScene.newScene()
 
         // Present the scene
-        let skView = self.view as! SKView
+        let skView = self.skView
         skView.presentScene(scene)
         
         skView.ignoresSiblingOrder = true
         skView.showsFPS = true
         skView.showsNodeCount = true
+
+        let mainView = MainView(frame: skView.frame)
+        skView.addSubview(mainView)
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartPanel" customModule="ShengjiPockerGame" customModuleProvider="target">
+            <connections>
+                <outlet property="btnLogin" destination="JGM-6s-1jL" id="65y-ef-5KD"/>
+                <outlet property="btnRegister" destination="XJx-iQ-YcG" id="gCc-dV-YrK"/>
+                <outlet property="mainView" destination="EhM-Sb-qne" id="5Tg-0r-zJA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="EhM-Sb-qne">
+            <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="enw-La-OKY">
+                    <rect key="frame" x="216.66666666666666" y="260.66666666666669" width="418.66666666666674" height="66.333333333333314"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJx-iQ-YcG">
+                            <rect key="frame" x="8" y="8.0000000000000036" width="141.33333333333334" height="50.333333333333343"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="filled" title="注册账号" cornerStyle="capsule" buttonSize="large">
+                                <directionalEdgeInsets key="contentInsets" top="0.0" leading="36" bottom="0.0" trailing="36"/>
+                                <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
+                            </buttonConfiguration>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGM-6s-1jL">
+                            <rect key="frame" x="269.33333333333337" y="8.0000000000000036" width="141.33333333333337" height="50.333333333333343"/>
+                            <buttonConfiguration key="configuration" style="filled" title="登录游戏" cornerStyle="capsule" buttonSize="large"/>
+                        </button>
+                    </subviews>
+                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="3zJ-We-oHi"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="3zJ-We-oHi" firstAttribute="bottom" secondItem="enw-La-OKY" secondAttribute="bottom" constant="32" id="alT-ec-Y8f"/>
+                <constraint firstItem="enw-La-OKY" firstAttribute="centerX" secondItem="EhM-Sb-qne" secondAttribute="centerX" id="pGg-vI-Xf5"/>
+            </constraints>
+            <point key="canvasLocation" x="108" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

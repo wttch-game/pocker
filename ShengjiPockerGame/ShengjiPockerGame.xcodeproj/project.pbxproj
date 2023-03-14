@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49786BB229C03F7600F64B4C /* LoginPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49786BB129C03F7600F64B4C /* LoginPanel.xib */; };
-		49786BB329C03F7600F64B4C /* LoginPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49786BB129C03F7600F64B4C /* LoginPanel.xib */; };
 		49786BB529C0425400F64B4C /* BaseXibPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49786BB429C0425400F64B4C /* BaseXibPanelView.swift */; };
 		49786BB629C0425400F64B4C /* BaseXibPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49786BB429C0425400F64B4C /* BaseXibPanelView.swift */; };
+		49786BBE29C08F9700F64B4C /* LoginPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F8029C03E8500E78210 /* LoginPanel.swift */; };
+		49786BBF29C08F9700F64B4C /* StartPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49786BBA29C07BE900F64B4C /* StartPanel.swift */; };
+		49786BC029C08F9F00F64B4C /* LoginPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49786BB129C03F7600F64B4C /* LoginPanel.xib */; };
+		49786BC929C0B4FF00F64B4C /* StartPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49786BC829C0B4FF00F64B4C /* StartPanel.xib */; };
+		49786BCA29C0B4FF00F64B4C /* StartPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49786BC829C0B4FF00F64B4C /* StartPanel.xib */; };
+		49B29AA029C0BD5B00FF25DE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B29A9F29C0BD5B00FF25DE /* MainView.swift */; };
 		49ED4F4B29BF58BA00E78210 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F4A29BF58BA00E78210 /* AppDelegate.swift */; };
 		49ED4F4D29BF58BA00E78210 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F4C29BF58BA00E78210 /* GameViewController.swift */; };
 		49ED4F5029BF58BA00E78210 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49ED4F4E29BF58BA00E78210 /* Main.storyboard */; };
@@ -30,13 +34,14 @@
 		49ED4F7529BF5AE200E78210 /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 49ED4F7329BF5AE200E78210 /* StartScene.sks */; };
 		49ED4F7729BF5C5E00E78210 /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F7629BF5C5E00E78210 /* StartScene.swift */; };
 		49ED4F7829BF5C5E00E78210 /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F7629BF5C5E00E78210 /* StartScene.swift */; };
-		49ED4F8129C03E8500E78210 /* LoginPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F8029C03E8500E78210 /* LoginPanel.swift */; };
-		49ED4F8229C03E8500E78210 /* LoginPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F8029C03E8500E78210 /* LoginPanel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		49786BB129C03F7600F64B4C /* LoginPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginPanel.xib; sourceTree = "<group>"; };
 		49786BB429C0425400F64B4C /* BaseXibPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXibPanelView.swift; sourceTree = "<group>"; };
+		49786BBA29C07BE900F64B4C /* StartPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPanel.swift; sourceTree = "<group>"; };
+		49786BC829C0B4FF00F64B4C /* StartPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartPanel.xib; sourceTree = "<group>"; };
+		49B29A9F29C0BD5B00FF25DE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		49ED4F3F29BF58B900E78210 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		49ED4F4029BF58B900E78210 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		49ED4F4129BF58B900E78210 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -74,6 +79,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49786BBD29C08D9B00F64B4C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49786BB129C03F7600F64B4C /* LoginPanel.xib */,
+				49ED4F8029C03E8500E78210 /* LoginPanel.swift */,
+				49786BC829C0B4FF00F64B4C /* StartPanel.xib */,
+				49786BBA29C07BE900F64B4C /* StartPanel.swift */,
+				49B29A9F29C0BD5B00FF25DE /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		49ED4F3929BF58B800E78210 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +124,7 @@
 		49ED4F4929BF58BA00E78210 /* ShengjiPockerGame iOS */ = {
 			isa = PBXGroup;
 			children = (
+				49786BBD29C08D9B00F64B4C /* View */,
 				49ED4F4A29BF58BA00E78210 /* AppDelegate.swift */,
 				49ED4F4C29BF58BA00E78210 /* GameViewController.swift */,
 				49ED4F4E29BF58BA00E78210 /* Main.storyboard */,
@@ -140,8 +158,6 @@
 		49ED4F7F29C03E6D00E78210 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				49ED4F8029C03E8500E78210 /* LoginPanel.swift */,
-				49786BB129C03F7600F64B4C /* LoginPanel.xib */,
 				49786BB429C0425400F64B4C /* BaseXibPanelView.swift */,
 			);
 			path = View;
@@ -226,11 +242,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49786BB229C03F7600F64B4C /* LoginPanel.xib in Resources */,
+				49786BC029C08F9F00F64B4C /* LoginPanel.xib in Resources */,
 				49ED4F6429BF58BA00E78210 /* GameScene.sks in Resources */,
 				49ED4F5029BF58BA00E78210 /* Main.storyboard in Resources */,
 				49ED4F6229BF58BA00E78210 /* Actions.sks in Resources */,
 				49ED4F7429BF5AE200E78210 /* StartScene.sks in Resources */,
+				49786BC929C0B4FF00F64B4C /* StartPanel.xib in Resources */,
 				49ED4F5329BF58BA00E78210 /* LaunchScreen.storyboard in Resources */,
 				49ED4F6829BF58BA00E78210 /* Assets.xcassets in Resources */,
 			);
@@ -243,8 +260,8 @@
 				49ED4F6029BF58BA00E78210 /* Main.storyboard in Resources */,
 				49ED4F6529BF58BA00E78210 /* GameScene.sks in Resources */,
 				49ED4F6929BF58BA00E78210 /* Assets.xcassets in Resources */,
+				49786BCA29C0B4FF00F64B4C /* StartPanel.xib in Resources */,
 				49ED4F7529BF5AE200E78210 /* StartScene.sks in Resources */,
-				49786BB329C03F7600F64B4C /* LoginPanel.xib in Resources */,
 				49ED4F6329BF58BA00E78210 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,8 +273,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49786BBE29C08F9700F64B4C /* LoginPanel.swift in Sources */,
+				49B29AA029C0BD5B00FF25DE /* MainView.swift in Sources */,
+				49786BBF29C08F9700F64B4C /* StartPanel.swift in Sources */,
 				49ED4F6629BF58BA00E78210 /* GameScene.swift in Sources */,
-				49ED4F8129C03E8500E78210 /* LoginPanel.swift in Sources */,
 				49786BB529C0425400F64B4C /* BaseXibPanelView.swift in Sources */,
 				49ED4F4D29BF58BA00E78210 /* GameViewController.swift in Sources */,
 				49ED4F4B29BF58BA00E78210 /* AppDelegate.swift in Sources */,
@@ -270,7 +289,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				49ED4F6729BF58BA00E78210 /* GameScene.swift in Sources */,
-				49ED4F8229C03E8500E78210 /* LoginPanel.swift in Sources */,
 				49786BB629C0425400F64B4C /* BaseXibPanelView.swift in Sources */,
 				49ED4F5D29BF58BA00E78210 /* GameViewController.swift in Sources */,
 				49ED4F5B29BF58BA00E78210 /* AppDelegate.swift in Sources */,

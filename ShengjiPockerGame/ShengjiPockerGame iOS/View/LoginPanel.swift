@@ -10,6 +10,8 @@ import SwiftUI
 
 class LoginPanel : BaseXibPanelView {
     @IBOutlet weak var panel : UIView!
+    @IBOutlet weak var btnCancel: UIButton!
+    @IBOutlet weak var btnLogin: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,9 +24,6 @@ class LoginPanel : BaseXibPanelView {
     override func initView() {
         // panel.bounds = panel.frame.insetBy(dx: 10, dy: 10)
         panel.layer.cornerRadius = 12
-    }
-    @IBAction func cancelLogin(_ sender: Any) {
-        self.removeFromSuperview()
     }
     
 }
