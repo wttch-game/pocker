@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ShengjiPockerGame/ShengjiPockerGame.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:PockerGame/PockerGame.xcodeproj">
    </FileRef>
    <FileRef

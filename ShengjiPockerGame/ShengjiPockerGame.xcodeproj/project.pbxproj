@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49786BB229C03F7600F64B4C /* LoginPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49786BB129C03F7600F64B4C /* LoginPanel.xib */; };
+		49786BB329C03F7600F64B4C /* LoginPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49786BB129C03F7600F64B4C /* LoginPanel.xib */; };
+		49786BB529C0425400F64B4C /* BaseXibPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49786BB429C0425400F64B4C /* BaseXibPanelView.swift */; };
+		49786BB629C0425400F64B4C /* BaseXibPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49786BB429C0425400F64B4C /* BaseXibPanelView.swift */; };
+		49ED4F4B29BF58BA00E78210 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F4A29BF58BA00E78210 /* AppDelegate.swift */; };
+		49ED4F4D29BF58BA00E78210 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F4C29BF58BA00E78210 /* GameViewController.swift */; };
+		49ED4F5029BF58BA00E78210 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49ED4F4E29BF58BA00E78210 /* Main.storyboard */; };
+		49ED4F5329BF58BA00E78210 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49ED4F5129BF58BA00E78210 /* LaunchScreen.storyboard */; };
+		49ED4F5B29BF58BA00E78210 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F5A29BF58BA00E78210 /* AppDelegate.swift */; };
+		49ED4F5D29BF58BA00E78210 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F5C29BF58BA00E78210 /* GameViewController.swift */; };
+		49ED4F6029BF58BA00E78210 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49ED4F5E29BF58BA00E78210 /* Main.storyboard */; };
+		49ED4F6229BF58BA00E78210 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 49ED4F3F29BF58B900E78210 /* Actions.sks */; };
+		49ED4F6329BF58BA00E78210 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 49ED4F3F29BF58B900E78210 /* Actions.sks */; };
+		49ED4F6429BF58BA00E78210 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 49ED4F4029BF58B900E78210 /* GameScene.sks */; };
+		49ED4F6529BF58BA00E78210 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 49ED4F4029BF58B900E78210 /* GameScene.sks */; };
+		49ED4F6629BF58BA00E78210 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F4129BF58B900E78210 /* GameScene.swift */; };
+		49ED4F6729BF58BA00E78210 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F4129BF58B900E78210 /* GameScene.swift */; };
+		49ED4F6829BF58BA00E78210 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49ED4F4229BF58BA00E78210 /* Assets.xcassets */; };
+		49ED4F6929BF58BA00E78210 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49ED4F4229BF58BA00E78210 /* Assets.xcassets */; };
+		49ED4F7429BF5AE200E78210 /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 49ED4F7329BF5AE200E78210 /* StartScene.sks */; };
+		49ED4F7529BF5AE200E78210 /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 49ED4F7329BF5AE200E78210 /* StartScene.sks */; };
+		49ED4F7729BF5C5E00E78210 /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F7629BF5C5E00E78210 /* StartScene.swift */; };
+		49ED4F7829BF5C5E00E78210 /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F7629BF5C5E00E78210 /* StartScene.swift */; };
+		49ED4F8129C03E8500E78210 /* LoginPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F8029C03E8500E78210 /* LoginPanel.swift */; };
+		49ED4F8229C03E8500E78210 /* LoginPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED4F8029C03E8500E78210 /* LoginPanel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		49786BB129C03F7600F64B4C /* LoginPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginPanel.xib; sourceTree = "<group>"; };
+		49786BB429C0425400F64B4C /* BaseXibPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXibPanelView.swift; sourceTree = "<group>"; };
+		49ED4F3F29BF58B900E78210 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		49ED4F4029BF58B900E78210 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		49ED4F4129BF58B900E78210 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		49ED4F4229BF58BA00E78210 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49ED4F4729BF58BA00E78210 /* ShengjiPockerGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShengjiPockerGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49ED4F4A29BF58BA00E78210 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		49ED4F4C29BF58BA00E78210 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		49ED4F4F29BF58BA00E78210 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49ED4F5229BF58BA00E78210 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		49ED4F5829BF58BA00E78210 /* ShengjiPockerGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShengjiPockerGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49ED4F5A29BF58BA00E78210 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		49ED4F5C29BF58BA00E78210 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		49ED4F5F29BF58BA00E78210 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49ED4F6129BF58BA00E78210 /* ShengjiPockerGame_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShengjiPockerGame_macOS.entitlements; sourceTree = "<group>"; };
+		49ED4F7329BF5AE200E78210 /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
+		49ED4F7629BF5C5E00E78210 /* StartScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
+		49ED4F8029C03E8500E78210 /* LoginPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPanel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49ED4F4429BF58BA00E78210 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49ED4F5529BF58BA00E78210 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49ED4F3929BF58B800E78210 = {
+			isa = PBXGroup;
+			children = (
+				49ED4F3E29BF58B900E78210 /* ShengjiPockerGame Shared */,
+				49ED4F4929BF58BA00E78210 /* ShengjiPockerGame iOS */,
+				49ED4F5929BF58BA00E78210 /* ShengjiPockerGame macOS */,
+				49ED4F4829BF58BA00E78210 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49ED4F3E29BF58B900E78210 /* ShengjiPockerGame Shared */ = {
+			isa = PBXGroup;
+			children = (
+				49ED4F7F29C03E6D00E78210 /* View */,
+				49ED4F7229BF5A4E00E78210 /* Scene */,
+				49ED4F3F29BF58B900E78210 /* Actions.sks */,
+				49ED4F4229BF58BA00E78210 /* Assets.xcassets */,
+			);
+			path = "ShengjiPockerGame Shared";
+			sourceTree = "<group>";
+		};
+		49ED4F4829BF58BA00E78210 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49ED4F4729BF58BA00E78210 /* ShengjiPockerGame.app */,
+				49ED4F5829BF58BA00E78210 /* ShengjiPockerGame.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49ED4F4929BF58BA00E78210 /* ShengjiPockerGame iOS */ = {
+			isa = PBXGroup;
+			children = (
+				49ED4F4A29BF58BA00E78210 /* AppDelegate.swift */,
+				49ED4F4C29BF58BA00E78210 /* GameViewController.swift */,
+				49ED4F4E29BF58BA00E78210 /* Main.storyboard */,
+				49ED4F5129BF58BA00E78210 /* LaunchScreen.storyboard */,
+			);
+			path = "ShengjiPockerGame iOS";
+			sourceTree = "<group>";
+		};
+		49ED4F5929BF58BA00E78210 /* ShengjiPockerGame macOS */ = {
+			isa = PBXGroup;
+			children = (
+				49ED4F5A29BF58BA00E78210 /* AppDelegate.swift */,
+				49ED4F5C29BF58BA00E78210 /* GameViewController.swift */,
+				49ED4F5E29BF58BA00E78210 /* Main.storyboard */,
+				49ED4F6129BF58BA00E78210 /* ShengjiPockerGame_macOS.entitlements */,
+			);
+			path = "ShengjiPockerGame macOS";
+			sourceTree = "<group>";
+		};
+		49ED4F7229BF5A4E00E78210 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				49ED4F4029BF58B900E78210 /* GameScene.sks */,
+				49ED4F4129BF58B900E78210 /* GameScene.swift */,
+				49ED4F7329BF5AE200E78210 /* StartScene.sks */,
+				49ED4F7629BF5C5E00E78210 /* StartScene.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		49ED4F7F29C03E6D00E78210 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49ED4F8029C03E8500E78210 /* LoginPanel.swift */,
+				49786BB129C03F7600F64B4C /* LoginPanel.xib */,
+				49786BB429C0425400F64B4C /* BaseXibPanelView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49ED4F4629BF58BA00E78210 /* ShengjiPockerGame iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49ED4F6C29BF58BA00E78210 /* Build configuration list for PBXNativeTarget "ShengjiPockerGame iOS" */;
+			buildPhases = (
+				49ED4F4329BF58BA00E78210 /* Sources */,
+				49ED4F4429BF58BA00E78210 /* Frameworks */,
+				49ED4F4529BF58BA00E78210 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ShengjiPockerGame iOS";
+			productName = "ShengjiPockerGame iOS";
+			productReference = 49ED4F4729BF58BA00E78210 /* ShengjiPockerGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		49ED4F5729BF58BA00E78210 /* ShengjiPockerGame macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49ED4F6F29BF58BA00E78210 /* Build configuration list for PBXNativeTarget "ShengjiPockerGame macOS" */;
+			buildPhases = (
+				49ED4F5429BF58BA00E78210 /* Sources */,
+				49ED4F5529BF58BA00E78210 /* Frameworks */,
+				49ED4F5629BF58BA00E78210 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ShengjiPockerGame macOS";
+			productName = "ShengjiPockerGame macOS";
+			productReference = 49ED4F5829BF58BA00E78210 /* ShengjiPockerGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49ED4F3A29BF58B800E78210 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					49ED4F4629BF58BA00E78210 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					49ED4F5729BF58BA00E78210 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 49ED4F3D29BF58B800E78210 /* Build configuration list for PBXProject "ShengjiPockerGame" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49ED4F3929BF58B800E78210;
+			productRefGroup = 49ED4F4829BF58BA00E78210 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49ED4F4629BF58BA00E78210 /* ShengjiPockerGame iOS */,
+				49ED4F5729BF58BA00E78210 /* ShengjiPockerGame macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49ED4F4529BF58BA00E78210 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49786BB229C03F7600F64B4C /* LoginPanel.xib in Resources */,
+				49ED4F6429BF58BA00E78210 /* GameScene.sks in Resources */,
+				49ED4F5029BF58BA00E78210 /* Main.storyboard in Resources */,
+				49ED4F6229BF58BA00E78210 /* Actions.sks in Resources */,
+				49ED4F7429BF5AE200E78210 /* StartScene.sks in Resources */,
+				49ED4F5329BF58BA00E78210 /* LaunchScreen.storyboard in Resources */,
+				49ED4F6829BF58BA00E78210 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49ED4F5629BF58BA00E78210 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49ED4F6029BF58BA00E78210 /* Main.storyboard in Resources */,
+				49ED4F6529BF58BA00E78210 /* GameScene.sks in Resources */,
+				49ED4F6929BF58BA00E78210 /* Assets.xcassets in Resources */,
+				49ED4F7529BF5AE200E78210 /* StartScene.sks in Resources */,
+				49786BB329C03F7600F64B4C /* LoginPanel.xib in Resources */,
+				49ED4F6329BF58BA00E78210 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49ED4F4329BF58BA00E78210 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49ED4F6629BF58BA00E78210 /* GameScene.swift in Sources */,
+				49ED4F8129C03E8500E78210 /* LoginPanel.swift in Sources */,
+				49786BB529C0425400F64B4C /* BaseXibPanelView.swift in Sources */,
+				49ED4F4D29BF58BA00E78210 /* GameViewController.swift in Sources */,
+				49ED4F4B29BF58BA00E78210 /* AppDelegate.swift in Sources */,
+				49ED4F7729BF5C5E00E78210 /* StartScene.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49ED4F5429BF58BA00E78210 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49ED4F6729BF58BA00E78210 /* GameScene.swift in Sources */,
+				49ED4F8229C03E8500E78210 /* LoginPanel.swift in Sources */,
+				49786BB629C0425400F64B4C /* BaseXibPanelView.swift in Sources */,
+				49ED4F5D29BF58BA00E78210 /* GameViewController.swift in Sources */,
+				49ED4F5B29BF58BA00E78210 /* AppDelegate.swift in Sources */,
+				49ED4F7829BF5C5E00E78210 /* StartScene.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		49ED4F4E29BF58BA00E78210 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49ED4F4F29BF58BA00E78210 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		49ED4F5129BF58BA00E78210 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49ED4F5229BF58BA00E78210 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		49ED4F5E29BF58BA00E78210 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49ED4F5F29BF58BA00E78210 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49ED4F6A29BF58BA00E78210 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		49ED4F6B29BF58BA00E78210 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		49ED4F6D29BF58BA00E78210 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MYB5299FCX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wttch.ShengjiPockerGame;
+				PRODUCT_NAME = ShengjiPockerGame;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49ED4F6E29BF58BA00E78210 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MYB5299FCX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wttch.ShengjiPockerGame;
+				PRODUCT_NAME = ShengjiPockerGame;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49ED4F7029BF58BA00E78210 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ShengjiPockerGame macOS/ShengjiPockerGame_macOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MYB5299FCX;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wttch.ShengjiPockerGame;
+				PRODUCT_NAME = ShengjiPockerGame;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		49ED4F7129BF58BA00E78210 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ShengjiPockerGame macOS/ShengjiPockerGame_macOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MYB5299FCX;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wttch.ShengjiPockerGame;
+				PRODUCT_NAME = ShengjiPockerGame;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49ED4F3D29BF58B800E78210 /* Build configuration list for PBXProject "ShengjiPockerGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49ED4F6A29BF58BA00E78210 /* Debug */,
+				49ED4F6B29BF58BA00E78210 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49ED4F6C29BF58BA00E78210 /* Build configuration list for PBXNativeTarget "ShengjiPockerGame iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49ED4F6D29BF58BA00E78210 /* Debug */,
+				49ED4F6E29BF58BA00E78210 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49ED4F6F29BF58BA00E78210 /* Build configuration list for PBXNativeTarget "ShengjiPockerGame macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49ED4F7029BF58BA00E78210 /* Debug */,
+				49ED4F7129BF58BA00E78210 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49ED4F3A29BF58B800E78210 /* Project object */;
+}

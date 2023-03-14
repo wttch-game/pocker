@@ -52,7 +52,7 @@ enum PockerServerState : String {
 }
 
 
-class PockerServer {
+class PockerServer : ObservableObject {
     private let dispatchQueue = DispatchQueue(label: "socket", qos: .background)
     
     private var handler : PockerHandler
@@ -60,7 +60,8 @@ class PockerServer {
     private var bootstrap : ServerBootstrap?
     private var channel : Channel?
     
-    private var callbacks : [(PockerServerState) -> Void] = []
+    
+    @Published public var state : PockerServerState = .notStart
     
     // 监听的host和端口号
     private let host : String
@@ -72,13 +73,9 @@ class PockerServer {
         self.handler = PockerHandler()
     }
     
-    public func addCallback(_ callback : @escaping (PockerServerState) -> Void) {
-        self.callbacks.append(callback)
-    }
-    
     private func setState(_ state : PockerServerState) {
-        callbacks.forEach { callback in
-            callback(state)
+        DispatchQueue.main.async {
+            self.state = state
         }
     }
     

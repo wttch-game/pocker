@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493BC6F629BB7E6C00233465 /* TestScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 493BC6F529BB7E6C00233465 /* TestScene.sks */; };
+		493BC6F829BB7F7300233465 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493BC6F729BB7F7300233465 /* ButtonNode.swift */; };
 		4946E70129AFB9F900B963D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946E70029AFB9F900B963D5 /* AppDelegate.swift */; };
 		4946E70329AFB9F900B963D5 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4946E70229AFB9F900B963D5 /* GameScene.sks */; };
 		4946E70529AFB9F900B963D5 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4946E70429AFB9F900B963D5 /* Actions.sks */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		493BC6F529BB7E6C00233465 /* TestScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TestScene.sks; sourceTree = "<group>"; };
+		493BC6F729BB7F7300233465 /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 		4946E6FD29AFB9F900B963D5 /* PockerGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PockerGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4946E70029AFB9F900B963D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4946E70229AFB9F900B963D5 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -95,8 +99,25 @@
 				4946E70629AFB9F900B963D5 /* GameScene.swift */,
 				498F54E629BB787E007C80F5 /* StartScene.sks */,
 				49E48B3229BB7AF8001ACB04 /* StartScene.swift */,
+				493BC6F529BB7E6C00233465 /* TestScene.sks */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		493BC6F329BB7E3E00233465 /* Node */ = {
+			isa = PBXGroup;
+			children = (
+				493BC6F429BB7E4700233465 /* Component */,
+			);
+			path = Node;
+			sourceTree = "<group>";
+		};
+		493BC6F429BB7E4700233465 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				493BC6F729BB7F7300233465 /* ButtonNode.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		4946E6F429AFB9F900B963D5 = {
@@ -123,6 +144,7 @@
 		4946E6FF29AFB9F900B963D5 /* PockerGame */ = {
 			isa = PBXGroup;
 			children = (
+				493BC6F329BB7E3E00233465 /* Node */,
 				4929D42229B4A50100155CA9 /* Scene */,
 				4985D92629B0749A0042DD12 /* NIO */,
 				4946E70029AFB9F900B963D5 /* AppDelegate.swift */,
@@ -278,6 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				493BC6F629BB7E6C00233465 /* TestScene.sks in Resources */,
 				4946E70329AFB9F900B963D5 /* GameScene.sks in Resources */,
 				4946E70B29AFB9FA00B963D5 /* Assets.xcassets in Resources */,
 				4946E70529AFB9F900B963D5 /* Actions.sks in Resources */,
@@ -312,6 +335,7 @@
 				4946E70129AFB9F900B963D5 /* AppDelegate.swift in Sources */,
 				49E48B3329BB7AF8001ACB04 /* StartScene.swift in Sources */,
 				4985D92829B074AF0042DD12 /* PockerSocketClient.swift in Sources */,
+				493BC6F829BB7F7300233465 /* ButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +437,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -466,7 +490,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};

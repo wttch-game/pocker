@@ -10,9 +10,8 @@ import NIO
 import CocoaLumberjackSwift
 
 struct ContentView: View {
-    @State var state : PockerServerState = .notStart
     
-    private var pockerServer : PockerServer
+    @ObservedObject var pockerServer : PockerServer
     
     init() {
         self.pockerServer = PockerServer()
@@ -23,15 +22,15 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text(state.rawValue)
-            if state == .notStart {
+            Text(pockerServer.state.rawValue)
+            if pockerServer.state == .notStart {
                 Button(action: {
                     pockerServer.startBind()
                 }, label: {
                     Text("开启服务器")
                 })
             }
-            if state == .success {
+            if pockerServer.state == .success {
                 Button(action: {
                     pockerServer.shutdown()
                 }, label: {
@@ -40,9 +39,6 @@ struct ContentView: View {
             }
         }.onAppear {
             DDLog.add(DDOSLogger.sharedInstance)
-            self.pockerServer.addCallback({ state in
-                self.state = state
-            })
         }
     }
 }
