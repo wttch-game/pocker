@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49143F5C29E6ECDE00196844 /* ObserableServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49143F5B29E6ECDE00196844 /* ObserableServer.swift */; };
+		49143F5F29E6EF8200196844 /* SocketStateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49143F5E29E6EF8200196844 /* SocketStateExtension.swift */; };
 		4946E6C829AFB4EC00B963D5 /* PockerServerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946E6C729AFB4EC00B963D5 /* PockerServerApp.swift */; };
 		4946E6CA29AFB4EC00B963D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946E6C929AFB4EC00B963D5 /* ContentView.swift */; };
 		4946E6CC29AFB4EE00B963D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4946E6CB29AFB4EE00B963D5 /* Assets.xcassets */; };
@@ -14,9 +16,11 @@
 		4946E6DA29AFB4EE00B963D5 /* PockerServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946E6D929AFB4EE00B963D5 /* PockerServerTests.swift */; };
 		4946E6E429AFB4EE00B963D5 /* PockerServerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946E6E329AFB4EE00B963D5 /* PockerServerUITests.swift */; };
 		4946E6E629AFB4EE00B963D5 /* PockerServerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946E6E529AFB4EE00B963D5 /* PockerServerUITestsLaunchTests.swift */; };
-		4946E73529AFBA9F00B963D5 /* PockerServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946E73429AFBA9F00B963D5 /* PockerServer.swift */; };
 		4946E73829AFBAFB00B963D5 /* NIO in Frameworks */ = {isa = PBXBuildFile; productRef = 4946E73729AFBAFB00B963D5 /* NIO */; };
 		4985D92529B073C40042DD12 /* PockerCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 4985D92429B073C40042DD12 /* PockerCommon */; };
+		49B29AB429C1C03600FF25DE /* AccountDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B29AB329C1C03600FF25DE /* AccountDao.swift */; };
+		49B29AB729C1C08500FF25DE /* AccountMemoryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B29AB629C1C08500FF25DE /* AccountMemoryDao.swift */; };
+		49B29ABA29C1C0A400FF25DE /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B29AB929C1C0A400FF25DE /* Account.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49143F5B29E6ECDE00196844 /* ObserableServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserableServer.swift; sourceTree = "<group>"; };
+		49143F5E29E6EF8200196844 /* SocketStateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketStateExtension.swift; sourceTree = "<group>"; };
 		4946E6C429AFB4EC00B963D5 /* PockerServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PockerServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4946E6C729AFB4EC00B963D5 /* PockerServerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PockerServerApp.swift; sourceTree = "<group>"; };
 		4946E6C929AFB4EC00B963D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,7 +54,9 @@
 		4946E6DF29AFB4EE00B963D5 /* PockerServerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PockerServerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4946E6E329AFB4EE00B963D5 /* PockerServerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PockerServerUITests.swift; sourceTree = "<group>"; };
 		4946E6E529AFB4EE00B963D5 /* PockerServerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PockerServerUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		4946E73429AFBA9F00B963D5 /* PockerServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PockerServer.swift; sourceTree = "<group>"; };
+		49B29AB329C1C03600FF25DE /* AccountDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDao.swift; sourceTree = "<group>"; };
+		49B29AB629C1C08500FF25DE /* AccountMemoryDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMemoryDao.swift; sourceTree = "<group>"; };
+		49B29AB929C1C0A400FF25DE /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49143F5D29E6ECE500196844 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				49143F5B29E6ECDE00196844 /* ObserableServer.swift */,
+				49143F5E29E6EF8200196844 /* SocketStateExtension.swift */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
 		4946E6BB29AFB4EC00B963D5 = {
 			isa = PBXGroup;
 			children = (
@@ -102,7 +119,9 @@
 		4946E6C629AFB4EC00B963D5 /* PockerServer */ = {
 			isa = PBXGroup;
 			children = (
-				4946E73329AFBA9F00B963D5 /* NIO */,
+				49143F5D29E6ECE500196844 /* Socket */,
+				49B29AB829C1C09B00FF25DE /* Entity */,
+				49B29AAF29C1AE8D00FF25DE /* Dao */,
 				4946E6C729AFB4EC00B963D5 /* PockerServerApp.swift */,
 				4946E6C929AFB4EC00B963D5 /* ContentView.swift */,
 				4946E6CB29AFB4EE00B963D5 /* Assets.xcassets */,
@@ -137,19 +156,36 @@
 			path = PockerServerUITests;
 			sourceTree = "<group>";
 		};
-		4946E73329AFBA9F00B963D5 /* NIO */ = {
-			isa = PBXGroup;
-			children = (
-				4946E73429AFBA9F00B963D5 /* PockerServer.swift */,
-			);
-			path = NIO;
-			sourceTree = "<group>";
-		};
 		4985D92329B073C40042DD12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49B29AAF29C1AE8D00FF25DE /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				49B29AB529C1C06200FF25DE /* impl */,
+				49B29AB329C1C03600FF25DE /* AccountDao.swift */,
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
+		49B29AB529C1C06200FF25DE /* impl */ = {
+			isa = PBXGroup;
+			children = (
+				49B29AB629C1C08500FF25DE /* AccountMemoryDao.swift */,
+			);
+			path = impl;
+			sourceTree = "<group>";
+		};
+		49B29AB829C1C09B00FF25DE /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				49B29AB929C1C0A400FF25DE /* Account.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,9 +325,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49143F5C29E6ECDE00196844 /* ObserableServer.swift in Sources */,
+				49B29AB429C1C03600FF25DE /* AccountDao.swift in Sources */,
 				4946E6CA29AFB4EC00B963D5 /* ContentView.swift in Sources */,
-				4946E73529AFBA9F00B963D5 /* PockerServer.swift in Sources */,
+				49143F5F29E6EF8200196844 /* SocketStateExtension.swift in Sources */,
+				49B29AB729C1C08500FF25DE /* AccountMemoryDao.swift in Sources */,
 				4946E6C829AFB4EC00B963D5 /* PockerServerApp.swift in Sources */,
+				49B29ABA29C1C0A400FF25DE /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

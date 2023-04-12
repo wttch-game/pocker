@@ -10,7 +10,6 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-    private var client : PockerSocketClient?
     
     private var skView : SKView {
         get {
@@ -32,10 +31,8 @@ class GameViewController: UIViewController {
         skView.showsNodeCount = true
 
         DispatchQueue.global(qos: .background).async {
-            self.client = PockerSocketClient()
-            self.client?.connect()
             DispatchQueue.main.async {
-                let mainView = MainView(frame: skView.frame, client: self.client!)
+                let mainView = MainView(frame: skView.frame)
                 skView.addSubview(mainView)
             }
         }

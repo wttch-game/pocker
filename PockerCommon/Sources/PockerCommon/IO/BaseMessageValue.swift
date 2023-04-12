@@ -8,11 +8,9 @@
 import Foundation
 
 public protocol BaseMessageValue : Codable {
-    var opCode : Int {
-        get
-    }
+    associatedtype T : OpCode
     
-    var subCode : Int {
+    var opCode : T {
         get
     }
 }
@@ -24,6 +22,6 @@ extension BaseMessageValue {
     }
     
     public func toMessage() -> SocketMessage {
-        return SocketMessage(opCode: self.opCode, subCode: self.subCode, value: toData())
+        return SocketMessage(opCode: self.opCode.opCode, subCode: self.opCode.subCode, value: toData())
     }
 }
