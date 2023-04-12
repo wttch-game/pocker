@@ -44,6 +44,7 @@ struct ContentView: View {
                
             }
         }.onAppear {
+            try? server.start()
         }
     }
 }

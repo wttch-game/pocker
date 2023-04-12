@@ -47,14 +47,6 @@ class ServerConnection : ConnectionBase, Identifiable {
         switch(state) {
         case.ready:
             NSLog("Server connection ready.")
-            for i in 0..<10 {
-                self.sendMessage(opCode: 1, data: "你好客户端".data(using: .utf8)!)
-                self.sendMessage(opCode: 1, data: "你好客户端1111".data(using: .utf8)!)
-                self.sendMessage(opCode: 1, data: "你好客户端2222".data(using: .utf8)!)
-                self.sendMessage(opCode: 1, data: "你好客户端3333".data(using: .utf8)!)
-                Thread.sleep(forTimeInterval: 0.2)
-            }
-            connection.cancel()
 //            for i in 0..<1000 {
 //                let data = "testoaeuaosuthoaseuthosuhoaeuthaoseuhtaoesuhot".count.toData()
 //                connection.send(content: data, completion: .contentProcessed({ error in
@@ -64,6 +56,8 @@ class ServerConnection : ConnectionBase, Identifiable {
 //                    NSLog("服务器已发送:\(error?.errorCode)")
 //                }))
 //            }
+        case .failed(let error):
+            NSLog("server connection failled:\(error.localizedDescription)")
         default:
             break
         }

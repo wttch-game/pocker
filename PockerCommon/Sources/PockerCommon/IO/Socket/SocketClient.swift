@@ -36,10 +36,9 @@ public class SocketClient : ConnectionBase {
     }
     
     func receiveStr() {
-        self.receiveMessage { opCode, data in
-            if opCode == 1 {
-                let str = String(data: data, encoding: .utf8)!
-                NSLog(str)
+        self.receiveMessage { opCode, subCode, data in
+            if opCode == 1 && subCode == rcHeartBeat {
+                NSLog("收到心跳.")
                 self.receiveStr()
             }
         }
