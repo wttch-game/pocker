@@ -26,12 +26,9 @@ class ServerConnection : ConnectionBase, Identifiable {
         super.init(connection: connection, connectionQueue: ServerConnection.connectionQueue, label: "Server")
     }
     
-    func start() {
-        self.start(onStateChange: self.onStateChange(state:))
-    }
-    
-    func stop() {
-        NSLog("connectin(id:\(id) stop.")
+    override func stop() {
+        super.stop()
+        NSLog("connectin id:\(id) stop.")
     }
     
     private func stop(error: Error?) {
@@ -42,26 +39,4 @@ class ServerConnection : ConnectionBase, Identifiable {
             onStop(error)
         }
     }
-    
-    func onStateChange(state : NWConnection.State) {
-        switch(state) {
-        case.ready:
-            NSLog("Server connection ready.")
-//            for i in 0..<1000 {
-//                let data = "testoaeuaosuthoaseuthosuhoaeuthaoseuhtaoesuhot".count.toData()
-//                connection.send(content: data, completion: .contentProcessed({ error in
-//
-//                }))
-//                connection.send(content: "testoaeuaosuthoaseuthosuhoaeuthaoseuhtaoesuhot".data(using: .utf8), completion: .contentProcessed({ error in
-//                    NSLog("服务器已发送:\(error?.errorCode)")
-//                }))
-//            }
-        case .failed(let error):
-            NSLog("server connection failled:\(error.localizedDescription)")
-        default:
-            break
-        }
-    }
-    
-    
 }

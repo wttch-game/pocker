@@ -75,6 +75,8 @@ open class SocketServer {
         connection.start()
     }
     
+    /// 有连接关闭的时候调用
+    /// - Parameter connection: 关闭的连接
     private func onConnectionStop(_ connection : ServerConnection) {
         self.connections.removeValue(forKey: connection.id)
         NSLog("server did close connection \(connection.id)")

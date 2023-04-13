@@ -18,29 +18,11 @@ public class SocketClient : ConnectionBase {
         super.init(connection: connection, connectionQueue: SocketClient.connectionQueue, label: "Client")
     }
     
-    public func start() {
-        self.start(onStateChange: self.onStateChange(state:))
-    }
-    
-    func onStateChange(state: NWConnection.State) {
-        switch state {
-        case .ready:
-            NSLog("Client connection ready.")
-            let t = DispatchQueue(label: "test", qos: .background)
-            t.async {
-               
-                self.receiveStr()
-            }
-        default: break
-        }
-    }
-    
-    func receiveStr() {
-        self.receiveMessage { opCode, subCode, data in
-            if opCode == 1 && subCode == rcHeartBeat {
-                NSLog("收到心跳.")
-                self.receiveStr()
-            }
+    override func onReady() {
+        NSLog("Client connection ready.")
+        let t = DispatchQueue(label: "test", qos: .background)
+        t.async {
+            self.setupReceive()
         }
     }
     
@@ -53,11 +35,5 @@ public class SocketClient : ConnectionBase {
                 self.receive()
             }
         }
-    }
-  
-   public func test() {
-       //监听连接状态
-       connection.start(queue: DispatchQueue(label: "client connection"))
-       NSLog("客户端已启动...")
     }
 }

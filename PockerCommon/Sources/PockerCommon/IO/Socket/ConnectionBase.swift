@@ -26,9 +26,9 @@ public class ConnectionBase {
         self.label = label
     }
     
-    func start(onStateChange : @escaping (NWConnection.State) -> Void) {
+    public func start() {
         NSLog("\(label) Connection[\(connection.endpoint.debugDescription)] starting...")
-        connection.stateUpdateHandler = onStateChange
+        connection.stateUpdateHandler = self.onStateChange(state:)
         connection.start(queue: connectionQueue)
         NSLog("\(label) Connection[\(connection.endpoint.debugDescription)] started.")
         // 开始心跳
@@ -36,21 +36,70 @@ public class ConnectionBase {
             self.sendMessage(opCode: rcOpCode, subCode: rcHeartBeat, data: nil)
             NSLog("心跳已发送...")
         })
+        
+        // 开始数据接收
     }
     
-    func shutdown() {
+    func stop() {
         NSLog("Connection shutdowning...")
         connection.cancel()
         NSLog("Connection shutdowned.")
     }
     
-    func onError(error : Error?) {
-        NSLog("error \(error?.localizedDescription)")
-        // TODO 服务端心跳失败直接断开，客户端心跳失败断开重连！
-        self.heartBeatTask?.cancel()
-        self.shutdown()
+    func connectionDidFail(error : Error?) {
+        // 保证失败只调用一次, 然后就关闭连接
+        if self.connection.stateUpdateHandler != nil {
+            self.connection.stateUpdateHandler = nil
+            NSLog("connection fail: \(error?.localizedDescription)")
+            // TODO 服务端心跳失败直接断开，客户端心跳失败断开重连！
+            self.heartBeatTask?.cancel()
+            self.stop()
+        }
+    }
+    // MARK: 状态监听
+    private func onStateChange(state: NWConnection.State) {
+        switch state {
+        case .ready:
+            onReady()
+        case .cancelled:
+            onCancelled()
+        case .failed(let error):
+            onFailed(error: error)
+        case .setup:
+            onSetup()
+        case .preparing:
+            onPreparing()
+        case .waiting(let error):
+            onWaiting(error: error)
+        default: break
+        }
     }
     
+    func onSetup() {
+        NSLog("state change -> [setup]")
+    }
+    
+    func onPreparing() {
+        NSLog("state change -> [preparing]")
+    }
+    
+    func onReady() {
+        NSLog("state change -> [ready]")
+    }
+    
+    func onCancelled() {
+        NSLog("state change -> [canceled]")
+    }
+    
+    func onWaiting(error: Error) {
+        NSLog("state change -> [waiting]:\(error.localizedDescription)")
+    }
+    
+    func onFailed(error : Error) {
+        NSLog("state change -> [failed]:\(error.localizedDescription)")
+    }
+    
+    // MARK: 发送数据
     func sendMessage(opCode : UInt32, subCode: UInt32 = 0, data : Data?) {
         sendMagicNumber()
         sendUInt32(opCode)
@@ -68,16 +117,34 @@ public class ConnectionBase {
     }
     
     func sendData(data : Data) {
+
         connection.send(content: data, completion: .contentProcessed({ error in
-            self.onError(error: error)
+            self.connectionDidFail(error: error)
         }))
     }
     
     func sendUInt32(_ data : UInt32) {
         connection.send(content: data.toData(), completion: .contentProcessed({ error in
-            self.onError(error: error)
+            self.connectionDidFail(error: error)
         }))
     }
+    
+    // MARK: 接收数据
+    
+    func setupReceive() {
+        self.receiveMessage { opCode, subCode, data in
+            if opCode == 1 && subCode == rcHeartBeat {
+                NSLog("收到心跳.")
+            }
+            self.setupReceive()
+        }
+    }
+    
+    func connectionDidEnd() {
+        
+    }
+    
+    
     
     func receiveMessage(_ callback : @escaping (UInt32, UInt32, Data?) -> Void) {
         self.receiveMagicNumber { mu in
@@ -99,34 +166,29 @@ public class ConnectionBase {
                 }
             } else {
                 NSLog("magic number error.")
-                self.shutdown()
+                self.stop()
             }
         }
     }
     
     func receiveData(length : UInt32, _ callback : @escaping (Data) -> Void) {
+        receiveData(length: length, format: { $0 }, callback)
+    }
+    
+    func receiveData<T>(length : UInt32, format : @escaping (Data) -> T, _ callback : @escaping (T) -> Void) {
         let length = Int(length)
-        connection.receive(minimumIncompleteLength: 1, maximumLength: length) { content, contentContext, isComplete, error in
+        
+        connection.receive(minimumIncompleteLength: length, maximumLength: length) { content, contentContext, isComplete, error in
             if let content = content {
-                callback(content)
+                callback(format(content))
             } else {
                 NSLog("receive content is nil.")
-                self.shutdown()
             }
         }
     }
     
     func receiveUInt32(_ callback : @escaping (UInt32) -> Void) {
-        connection.receive(minimumIncompleteLength: 1, maximumLength: 4) { content, contentContext, isComplete, error in
-            if let content = content {
-                if content.count == 4 {
-                    callback(content.toUInt32())
-                    return
-                }
-            }
-            NSLog("receive content is nil.\(content?.count)")
-            self.shutdown()
-        }
+        self.receiveData(length: 4, format: { $0.toUInt32() }, callback)
     }
     
     func receiveMagicNumber(_ callback : @escaping (UInt32) -> Void) {
