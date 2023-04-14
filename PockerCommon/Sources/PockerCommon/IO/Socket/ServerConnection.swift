@@ -26,6 +26,11 @@ class ServerConnection : ConnectionBase, Identifiable {
         super.init(connection: connection, connectionQueue: ServerConnection.connectionQueue, label: "Server")
     }
     
+    
+    override func onReady() {
+        super.onReady()
+    }
+    
     override func stop() {
         super.stop()
         NSLog("connectin id:\(id) stop.")

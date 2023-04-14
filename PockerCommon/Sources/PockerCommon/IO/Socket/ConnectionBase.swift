@@ -20,6 +20,8 @@ public class ConnectionBase {
     private var heartBeatTask : Cancellable? = nil
     var label : String
     
+    let t = DispatchQueue(label: "test", qos: .background)
+    
     init(connection: NWConnection, connectionQueue: DispatchQueue, label: String) {
         self.connection = connection
         self.connectionQueue = connectionQueue
@@ -31,11 +33,6 @@ public class ConnectionBase {
         connection.stateUpdateHandler = self.onStateChange(state:)
         connection.start(queue: connectionQueue)
         NSLog("\(label) Connection[\(connection.endpoint.debugDescription)] started.")
-        // 开始心跳
-        heartBeatTask = ConnectionBase.heartBeat.schedule(after: .init(.now() + 2), interval: .seconds(2), {
-            self.sendMessage(opCode: rcOpCode, subCode: rcHeartBeat, data: nil)
-            NSLog("心跳已发送...")
-        })
         
         // 开始数据接收
     }
@@ -46,11 +43,11 @@ public class ConnectionBase {
         NSLog("Connection shutdowned.")
     }
     
-    func connectionDidFail(error : Error?) {
+    func connectionDidFail(error : Error) {
+        NSLog("connection fail: \(error.localizedDescription)")
         // 保证失败只调用一次, 然后就关闭连接
         if self.connection.stateUpdateHandler != nil {
             self.connection.stateUpdateHandler = nil
-            NSLog("connection fail: \(error?.localizedDescription)")
             // TODO 服务端心跳失败直接断开，客户端心跳失败断开重连！
             self.heartBeatTask?.cancel()
             self.stop()
@@ -83,8 +80,25 @@ public class ConnectionBase {
         NSLog("state change -> [preparing]")
     }
     
+    func startHearBeat() {
+        // 开始心跳
+        heartBeatTask = ConnectionBase.heartBeat.schedule(after: .init(.now() + 0.5), interval: .seconds(1), {
+            self.sendMessage(opCode: rcOpCode, subCode: rcHeartBeat, data: nil)
+            NSLog("心跳已发送...")
+        })
+    }
+    
+    func startRecevie() {
+        // 开始接受数据
+        t.async {
+            self.setupReceive()
+        }
+    }
+    
     func onReady() {
         NSLog("state change -> [ready]")
+        self.startHearBeat()
+        self.startRecevie()
     }
     
     func onCancelled() {
@@ -97,6 +111,7 @@ public class ConnectionBase {
     
     func onFailed(error : Error) {
         NSLog("state change -> [failed]:\(error.localizedDescription)")
+        self.connectionDidFail(error: error)
     }
     
     // MARK: 发送数据
@@ -116,16 +131,15 @@ public class ConnectionBase {
         sendUInt32(magicNumber)
     }
     
-    func sendData(data : Data) {
-
-        connection.send(content: data, completion: .contentProcessed({ error in
-            self.connectionDidFail(error: error)
-        }))
+    func sendUInt32(_ data : UInt32) {
+        sendData(data: data.toData())
     }
     
-    func sendUInt32(_ data : UInt32) {
-        connection.send(content: data.toData(), completion: .contentProcessed({ error in
-            self.connectionDidFail(error: error)
+    func sendData(data : Data) {
+        connection.send(content: data, completion: .contentProcessed({ error in
+            if let error = error {
+                self.connectionDidFail(error: error)
+            }
         }))
     }
     
@@ -152,6 +166,7 @@ public class ConnectionBase {
                 self.receiveUInt32 { opCode in
                     NSLog("opCode : \(opCode)")
                     self.receiveUInt32 { subCode in
+                        NSLog("subCode : \(subCode)")
                         self.receiveUInt32 { length in
                             NSLog("length : \(length)")
                             if length != 0 {

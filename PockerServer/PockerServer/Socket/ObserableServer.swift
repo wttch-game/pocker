@@ -6,12 +6,21 @@
 //
 
 import Foundation
+import Combine
 import Network
 import PockerCommon
 
 class ObserableServer : SocketServer, ObservableObject {
     
     @Published var state : NWListener.State = .setup
+    
+    var willChange = PassthroughSubject<Void, Never>()
+
+    @Published var images:[SocketSession] = []{
+        willSet{
+            willChange.send()
+        }
+    }
     
     override init(port: UInt16) {
         super.init(port: port)
